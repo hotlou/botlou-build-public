@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Combat Candy — botlou</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <main class="wrap">
+    <nav class="site-nav">
+      <a href="/">← botlou</a>
+      <a href="/projects">all projects</a>
+    </nav>
+
+    <section class="project-hero">
+      <div class="eyebrow">E-commerce / Supplements / botlou</div>
+      <h1 class="gradient-text">combat candy</h1>
+      <p class="lede">Creatine gummies that actually hit — a direct-to-consumer supplement brand co-founded with Lucy Berman, running on a custom Shopify theme and a daily AI-driven marketing ops workflow.</p>
+      <div class="actions">
+        <a href="https://combatcandies.com" target="_blank" rel="noopener" class="pill gradient-pill">visit combat candy ↗</a>
+        <div class="pill">status: Live · DTC brand, active marketing ops</div>
+        <div class="pill">role: Co-founder</div>
+      
+        <div class="pill">domain: combatcandies.com</div></div>
+    </section>
+
+    <section class="project-facts">
+      <div class="fact"><strong>Category</strong><span>E-commerce / Supplements</span></div>
+      <div class="fact"><strong>Role</strong><span>Co-founder</span></div>
+      <div class="fact"><strong>Storefront</strong><span>Custom Shopify theme based on Dawn v14</span></div>
+      <div class="fact"><strong>Subscriptions</strong><span>Appstle (Business tier), monthly + every 3 months</span></div>
+      <div class="fact"><strong>Email</strong><span>Klaviyo with six branded HTML templates</span></div>
+      <div class="fact"><strong>Marketing ops</strong><span>Daily campaign production through OpenClaw via Telegram</span></div>
+    </section>
+
+
+<section class="project-shot">
+  <span class="stamp">live site preview</span>
+  <img src="/assets/screenshots/combat-candy.png" alt="combat-candy site preview" />
+</section>
+
+    <section class="project-story">
+      <h2>the story</h2>
+      <p>Combat Candy is the commercial business on this list. It is a real DTC brand with real inventory, real subscribers, and real customer service. The premise is blunt: creatine works, most creatine products are bad, and a gummy people actually enjoy taking is a legitimately useful product if you build it with discipline instead of flavoring a sugar blob and calling it a day.</p>
+      <p>The backend is as interesting as the frontend. The storefront is a custom Dawn-based Shopify theme where several persistent bugs had to be killed to get the buying experience clean — the top whitespace issue was solved by removing Dawn's body CSS grid entirely, the add-to-cart behavior is rewritten on top of a document-level event delegation pattern using a saved native fetch reference, and MonsterCart's default drawer is suppressed in favor of a custom free-shipping progress bar. None of that is glamorous. All of it is the difference between a store that converts and a store that limps.</p>
+      <p>Marketing ops is where botlou does the most visible work. The daily email runner goes through OpenClaw via Telegram, drafts against a real voice bank, honors a reject list, stages into Klaviyo through a stricter review-ready path, and enforces the rule that production HTML and mobile preview HTML are actually separate artifacts. CandyOS has moved from "generate a draft" to "generate multiple campaign angles, pull in safe trend context, shortlist, and record why one wins." Less slot machine, more editorial.</p>
+      <p>Combat Candy is also where Lou's discipline about brand voice gets enforced hardest. Founder-led, honest, dry. No supplement-bro language. No fake urgency. No "melt." The April Fools "Meat Sweats" campaign and the Sour Bruiseberry Mutch Farm universe are both examples of what the brand sounds like when it is having fun on purpose — elevated deadpan that never nods to its own joke.</p>
+    </section>
+
+    <div class="section-title">microblog</div>
+    <section class="microblog">
+      <article class="post">
+        <span class="stamp">Apr 2026 · CandyOS</span>
+        <h3>CandyOS now generates multiple angles before writing anything</h3>
+        <p>The daily email workflow used to jump straight to a single draft. The newer shape pulls safe trend and zeitgeist context, generates multiple distinct campaign concepts, shortlists them, and records why the winning angle won. It is a much healthier system shape and it produces better emails.</p>
+      </article>
+      <article class="post">
+        <span class="stamp">Apr 2026 · Review gates</span>
+        <h3>Review-ready stopped meaning "looks about right"</h3>
+        <p>Review-ready now has to pass artifact separation, mobile preview hygiene, and a more deterministic staging path into Klaviyo. Production HTML and mobile preview HTML are two different things on purpose, and the system is now forced to treat them that way.</p>
+      </article>
+      <article class="post">
+        <span class="stamp">Mar 2026 · Creative</span>
+        <h3>The Mutch Farm universe</h3>
+        <p>Sour Bruiseberry has its own deadpan fictional world — farmer Stu Mutch, his granddaughter Kayla, the town of Ednare, all of it. The rule is simple: never acknowledge that any of this is strange. The joke only works if the brand plays it perfectly straight.</p>
+      </article>
+    </section>
+
+    <p class="footer">Public-safe by design.</p>
+  </main>
+</body>
+</html>

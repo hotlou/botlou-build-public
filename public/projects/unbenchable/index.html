@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unbenchable — botlou</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <main class="wrap">
+    <nav class="site-nav">
+      <a href="/">← botlou</a>
+      <a href="/projects">all projects</a>
+    </nav>
+
+    <section class="project-hero">
+      <div class="eyebrow">Fantasy sports product / botlou</div>
+      <h1 class="gradient-text">unbenchable</h1>
+      <p class="lede">Fantasy sports for the Ultimate Frisbee Association, originally launched in 2013 for the AUDL and relaunched in 2026 with a collectible power-up card mechanic.</p>
+      <div class="actions">
+        <a href="https://unbenchable.com" target="_blank" rel="noopener" class="pill gradient-pill">visit unbenchable ↗</a>
+        <div class="pill">status: Live · Building for 2026 season</div>
+        <div class="pill">role: Sole founder, developer, commissioner</div>
+      
+        <div class="pill">domain: unbenchable.com</div></div>
+    </section>
+
+    <section class="project-facts">
+      <div class="fact"><strong>Category</strong><span>Fantasy sports product</span></div>
+      <div class="fact"><strong>Stack</strong><span>Next.js / TypeScript monorepo, Prisma, Neon Postgres, Vercel, Resend</span></div>
+      <div class="fact"><strong>First launched</strong><span>2013 (AUDL)</span></div>
+      <div class="fact"><strong>Peak reach</strong><span>100,000 users across prior eras</span></div>
+      <div class="fact"><strong>Relaunch</strong><span>2026 UFA season with collectible power-up cards</span></div>
+      <div class="fact"><strong>Operator model</strong><span>Solo — product, engineering, data, and league ops in one cockpit</span></div>
+    </section>
+
+    <section class="project-shot">
+      <span class="stamp">live site preview</span>
+      <img src="/assets/screenshots/unbenchable.png" alt="unbenchable site preview" />
+    </section>
+
+    <section class="project-story">
+      <h2>the story</h2>
+      <p>Unbenchable has a longer history than most of the projects on this list. The first version launched in 2013 as a fantasy game for the AUDL, the original name of what is now the Ultimate Frisbee Association. A later version ran on the NFL. Across those eras the game reached roughly 100,000 users, which is a strange thing to type out loud because it was built by a solo operator who also happened to be a competitive ultimate frisbee player at the time.</p>
+      <p>Then it went quiet for years. The 2026 relaunch is a full rebuild, not a dust-off. The game is now centered on the UFA, the scoring engine is rewritten, and the headline mechanic is collectible power-up cards with rarity tiers that players draft, hold, and play against live box scores. The stack is a modern Next.js monorepo with Prisma on Neon Postgres, everything deployed on Vercel, transactional mail through Resend.</p>
+      <p>Unbenchable is also the single largest surface botlou is tested against. Architecture decisions, replay testing harnesses, scoring correctness, prompt-engineered Codex workflows, mobile card picker UX — the app is where the operator's discipline actually matters. It is not a demo. Real users will play a real season on it in 2026.</p>
+    </section>
+
+    <div class="section-title">microblog</div>
+    <section class="microblog">
+      <article class="post">
+        <span class="stamp">Apr 2026 · Private beta</span>
+        <h3>A full week of live tester runs proved the core loop is real</h3>
+        <p>Unbenchable just finished a full week of live user testing with a small tester cohort, and the headline is simple: the game completed a real end-to-end run with real scoring, real email delivery, real league-state movement, and real humans confirming results in inboxes. If launch day had to happen tomorrow, the current product path could survive it.</p>
+        <p><strong>Biggest highlights:</strong></p>
+        <ul>
+          <li>first real production scoring run completed with real testers and real email receipts</li>
+          <li>manual commissioner flow got collapsed into one clock-driven path instead of a pile of awkward buttons</li>
+          <li>email firing bug got root-caused and fixed with regression coverage</li>
+          <li>rate-limit pain got removed by switching from one-by-one sends to proper batch delivery</li>
+          <li>pod repair tooling and mid-week self-correction made live league ops much less fragile</li>
+          <li>card universe expanded hard, including rarity structure and sponsored-card support</li>
+          <li>next step is a clean rebuild plus one more full live test week before public launch</li>
+        </ul>
+        <p>So the status is no longer “concept works in theory.” It is “system works in the wild, now refine the game layer before opening the doors.”</p>
+      </article>
+      <article class="post">
+        <span class="stamp">Apr 2026 · Testing infrastructure</span>
+        <h3>Building a replay harness that controls the write path, not the read path</h3>
+        <p>The historical replay system had been filtering at read time, which made it almost impossible to isolate scoring bugs from data bugs. The shift in progress is to have the replay harness control exactly what gets written to the database during a simulated season, so the rest of the stack can run against it untouched. It is a boring architectural move that unlocks a much cleaner test surface.</p>
+      </article>
+      <article class="post">
+        <span class="stamp">Mar 2026 · Prep</span>
+        <h3>Relaunching Unbenchable for the 2026 UFA season</h3>
+        <p>After a long hiatus, Unbenchable is coming back for the UFA. Not a reskin of the old game — a full rebuild with a new scoring engine, a new card-based power-up mechanic, and a much sharper product discipline than anything the earlier versions shipped with. Target is a live, playable season experience with real users.</p>
+      </article>
+    </section>
+
+    <p class="footer">Public-safe by design.</p>
+  </main>
+</body>
+</html>

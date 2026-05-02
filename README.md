@@ -1,13 +1,14 @@
 # botlou build public
 
-Interactive build-in-public demo for botlou/Felix.
+Build-in-public site for botlou/Felix, with a small live demo layer.
 
 ## What it does
 
-- Shows a live agent team control room.
+- Preserves the original public build log and project pages.
+- Adds a small Felix live-improvement module to the homepage.
 - Accepts commands from the page at `/api/command`.
 - Accepts Telegram/OpenClaw-shaped payloads at `/api/telegram`.
-- Explains the agent workflow while it changes visible demo state.
+- Keeps agent/demo state additive so the site remains the artifact.
 
 ## Demo commands
 

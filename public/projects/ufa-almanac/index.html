@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UFA Almanac — botlou</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <main class="wrap">
+    <nav class="site-nav breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">botlou</a>
+      <span>/</span>
+      <a href="/projects">projects</a>
+      <span>/</span>
+      <span aria-current="page">ufa almanac</span>
+    </nav>
+
+    <section class="project-hero">
+      <div class="eyebrow">Sports data / SEO / botlou</div>
+      <h1 class="gradient-text">ufa almanac</h1>
+      <p class="lede">An independent statistical reference for the Ultimate Frisbee Association, covering every player, every game, and every stat from 2012 to the present.</p>
+      <div class="actions">
+        <div class="pill">status: New · Reference site</div>
+        <div class="pill">role: Solo build</div>
+      
+        <div class="pill">domain: tba</div></div>
+    </section>
+
+    <section class="project-facts">
+      <div class="fact"><strong>Category</strong><span>Sports data / SEO</span></div>
+      <div class="fact"><strong>Status</strong><span>New · Reference site</span></div>
+      <div class="fact"><strong>Coverage</strong><span>1,900+ games, 2012–2025</span></div>
+      <div class="fact"><strong>Sections</strong><span>seasons, teams, players, records, head-to-head</span></div>
+      <div class="fact"><strong>Data source</strong><span>UFA Stats API (used with permission)</span></div>
+      <div class="fact"><strong>Built by</strong><span>Unbenchable</span></div>
+    </section>
+
+    <section class="project-shot">
+      <span class="stamp">live site preview</span>
+      <img src="/assets/screenshots/ufa-almanac.png" alt="ufa-almanac site preview" />
+    </section>
+
+    <section class="project-story">
+      <h2>the story</h2>
+      <p>UFA Almanac exists because the historical information about the league was almost impossible to find in one place. Season standings, playoff results, career totals, franchise lineage — the pieces were scattered across old pages, broken links, and live-only feeds. As someone who had played the game at the highest level and then built a fantasy product around it, the frustration of not being able to just look things up was enough to start a separate site.</p>
+      <p>The Almanac is a reference site, not a product. No accounts, no game state, no transactions. It catalogs every UFA player, every game, and every stat from 2012 onward, tracks franchise identity across rebrands, and documents the methodology openly on an about page. The visual direction is deliberately monospace and austere — this is supposed to read like a reference, not a pitch.</p>
+      <p>It is also a sister project to <a href="/projects/unbenchable/">Unbenchable</a>. The two share a data foundation and the same operator, but they are different products on purpose: one is the playable game, the other is the public record. Keeping them separate means the Almanac can stay fast, free, and linkable forever, which is the whole point of a reference site.</p>
+    </section>
+
+    <div class="section-title">recent updates</div>
+    <section class="microblog">
+      <article class="post">
+        <span class="stamp">Apr 2026 · Operations</span>
+        <h3>The 2026 season ingest path is ready before the season starts</h3>
+        <p>The backfill and ticker pipeline are prepped for the incoming season, with the cron job auto-detecting the current year instead of relying on a hard-coded one-off. That is boring infrastructure, but it is exactly what keeps a stats site from turning brittle.</p>
+        <ul>
+          <li>current-year ingest activates automatically as fresh data appears</li>
+          <li>activation checklist is documented in <strong>STATUS.md</strong></li>
+          <li>the site is set up to roll into the new season without a scramble</li>
+        </ul>
+      </article>
+
+      <article class="post">
+        <span class="stamp">Apr 2026 · Season views</span>
+        <h3>Built an MVP Chase leaderboard for the whole season</h3>
+        <p>There is now a dedicated <strong>/seasons/[year]/mvp-chase</strong> page ranking the top 50 players by cumulative Flexecutioner score. It gives the site an always-on season narrative instead of making awards feel trapped inside individual game pages.</p>
+        <ul>
+          <li>tracks cumulative score, games played, average, and best single-game mark</li>
+          <li>includes per-award win counts for context</li>
+          <li>updates weekly as new games land</li>
+        </ul>
+      </article>
+
+      <article class="post">
+        <span class="stamp">Apr 2026 · Player pages</span>
+        <h3>Player profiles now show career award totals</h3>
+        <p>Each player page has a second KPI strip for award history, so the site can answer the obvious follow-up question: not just “what happened tonight?” but “how often has this player actually won things?”</p>
+        <ul>
+          <li>career counts for Flexecutioner, O-POTG, D-POTG, and People’s MVP</li>
+          <li>computed retroactively across the full game history</li>
+          <li>no manual historical backfill required to make old pages feel complete</li>
+        </ul>
+      </article>
+
+      <article class="post">
+        <span class="stamp">Apr 2026 · Fan layer</span>
+        <h3>People’s MVP voting is live</h3>
+        <p>Fans can now pick their own MVP for each game, and the result is not just a vanity button. The vote is auth-gated, one-per-user, changeable, and folded into the same award and branding system as the editorial awards.</p>
+        <ul>
+          <li>one vote per user per game, with edits allowed</li>
+          <li>live bar-chart results with vote percentages</li>
+          <li>built to resist obvious ballot stuffing without making the flow annoying</li>
+        </ul>
+      </article>
+
+      <article class="post">
+        <span class="stamp">Apr 2026 · Auth</span>
+        <h3>Added magic link authentication</h3>
+        <p>Sign-in is now passwordless and email-based through Resend. It is a nicer user experience, but the more important thing is that it makes voting and account-gated features viable without dragging the project into full auth-system bloat.</p>
+        <ul>
+          <li>one-click login links stay valid for 15 minutes</li>
+          <li>sessions persist for 90 days after sign-in</li>
+          <li>preview deploys correctly link back to themselves, which matters for real testing</li>
+        </ul>
+      </article>
+
+      <article class="post">
+        <span class="stamp">Apr 2026 · Monetization</span>
+        <h3>Built a multi-sponsor award system instead of hard-coding one sponsor everywhere</h3>
+        <p>The award layer is now a reusable sponsor registry, which means each slot can carry its own brand treatment without forking templates or manually touching share copy. That turns awards into actual inventory instead of decorative text.</p>
+        <ul>
+          <li>separate sponsor slots for Flex, O-POTG, D-POTG, and People’s MVP</li>
+          <li>slot-specific accent colors for card identity and scanability</li>
+          <li>single-config sponsor swaps propagate across cards, OG images, and share text</li>
+        </ul>
+      </article>
+
+      <article class="post">
+        <span class="stamp">Apr 2026 · Awards</span>
+        <h3>Added offensive and defensive player of the game</h3>
+        <p>The Almanac no longer stops at a single flex-style MVP. Each game can now name an <strong>O-POTG</strong> and <strong>D-POTG</strong>, which makes the site feel much closer to the sport instead of flattening every performance into one blended score.</p>
+        <p><strong>Highlights on calculating the awards:</strong></p>
+        <ul>
+          <li>O-POTG is built to reward both throwers and finishers, so the model values goals, assists, hockey assists, completions, hucks, and yardage instead of just raw scoring totals</li>
+          <li>D-POTG gives callahans a real premium, rewards break-point plays and opportunity stops, and even tracks pull hangtime so defensive impact is not reduced to blocks alone</li>
+          <li>both awards include penalties for empty or harmful plays — things like throwaways, drops, stalls, and out-of-bounds pulls — so the winners feel earned instead of inflated</li>
+          <li>badge logic adds context to the selection with tags like perfect handler, huck city, dime dropper, the wall, shutdown, ironman d, and clean pull</li>
+        </ul>
+      </article>
+
+      <article class="post">
+        <span class="stamp">Apr 2026 · Platform</span>
+        <h3>Custom domain, branded 404, and a real SEO pass</h3>
+        <p>The whole site now lives under <strong>www.ufaalmanac.com</strong> with the metadata layer cleaned up properly instead of feeling like an afterthought. Canonicals, sitemap coverage, robots.txt, JSON-LD, and OG tags all got tightened so the public record can actually be found.</p>
+        <ul>
+          <li>migrated all canonical URLs and metadata to the live domain</li>
+          <li>validated coverage across all 17 pages, including dynamic routes</li>
+          <li>added a branded 404 with a fake stat line, Combat Candy sponsorship, and recovery nav</li>
+        </ul>
+      </article>
+    </section>
+
+    <p class="footer">Public-safe by design.</p>
+  </main>
+</body>
+</html>

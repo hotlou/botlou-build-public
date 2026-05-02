@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RushmoreMe — botlou</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <main class="wrap">
+    <nav class="site-nav">
+      <a href="/">← botlou</a>
+      <a href="/projects">all projects</a>
+    </nav>
+
+    <section class="project-hero">
+      <div class="eyebrow">AI / Stripe experiment / botlou</div>
+      <h1 class="gradient-text">rushmoreme</h1>
+      <p class="lede">Upload a face, get yourself chiseled into Mount Rushmore — a one-shot novelty generator with a one-shot monetization model.</p>
+      <div class="actions">
+        <a href="https://rushmoreme.com" target="_blank" rel="noopener" class="pill gradient-pill">visit rushmoreme ↗</a>
+        <div class="pill">status: Live · Novelty experiment</div>
+        <div class="pill">role: Solo build, with Claude collaboration</div>
+      
+        <div class="pill">domain: rushmoreme.com</div></div>
+    </section>
+
+    <section class="project-facts">
+      <div class="fact"><strong>Category</strong><span>AI / Stripe experiment</span></div>
+      <div class="fact"><strong>Stack</strong><span>Next.js 14 on Vercel</span></div>
+      <div class="fact"><strong>Generation</strong><span>OpenAI image API</span></div>
+      <div class="fact"><strong>Payments</strong><span>Stripe one-time, $2.99</span></div>
+      <div class="fact"><strong>Build time</strong><span>weekend experiment</span></div>
+      <div class="fact"><strong>Monetization</strong><span>CSS watermark overlay that lifts on paid unlock</span></div>
+    </section>
+
+
+<section class="project-shot">
+  <span class="stamp">live site preview</span>
+  <img src="/assets/screenshots/rushmoreme.png" alt="rushmoreme site preview" />
+</section>
+
+    <section class="project-story">
+      <h2>the story</h2>
+      <p>RushmoreMe is the smallest, silliest project on this list, and on purpose. Upload a photo of a face. Get a Mount Rushmore image with that face carved into the mountain. Pay $2.99 to lift the watermark. That is the whole product.</p>
+      <p>The point of building it was not the novelty — it was proving a reusable pattern: a one-shot AI generation product with a one-shot payment, deployed in a weekend, with a monetization mechanic simple enough to explain in one sentence. The CSS watermark overlay is key to the pattern. Instead of a full gate, the user sees the image immediately, the watermark is obvious, and paying lifts it. Low friction, high intent.</p>
+      <p>It was built in collaboration with Claude — scoped, planned, implemented, and iterated as a prompt-engineered fast-ship exercise. The result is currently live at rushmoreme.com, running on Next.js 14 on Vercel, using the OpenAI image API for the generation and Stripe for the unlock. Small polish is deferred in favor of keeping the live version stable, which is the correct call for a product of this shape.</p>
+    </section>
+
+    <div class="section-title">microblog</div>
+    <section class="microblog">
+      <article class="post">
+        <span class="stamp">Apr 2026 · Preview pipeline</span>
+        <h3>Shipped a watermarked low-res preview path that markets itself</h3>
+        <p>The first-pass image now ships as a shareable low-res preview with a built-in watermark, and the watermark scales to match each generator's aspect ratio. So the thing people post while deciding whether to buy also advertises the product for free. That is the correct kind of vanity.</p>
+      </article>
+
+      <article class="post">
+        <span class="stamp">Apr 2026 · Delivery model</span>
+        <h3>Switched to generate once, then unlock the exact same HD image</h3>
+        <p>The original high-res file now gets stashed in Vercel Blob and unlocked after verified Stripe payment. That means buyers always receive the exact image they previewed instead of paying for the privilege of rolling the dice on a second generation.</p>
+      </article>
+
+      <article class="post">
+        <span class="stamp">Apr 2026 · Session recovery</span>
+        <h3>Users can now pick up where they left off</h3>
+        <p>localStorage persistence plus a “Pick up where you left off” card means back button chaos, refreshes, and tab closes no longer kill the result. Only a brand-new generation clears the old one, which is how this should have worked from the start.</p>
+      </article>
+
+      <article class="post">
+        <span class="stamp">Apr 2026 · Joke density</span>
+        <h3>Built real generator variety instead of one joke wearing six hats</h3>
+        <p>RushmoreMe now has per-generator aspect ratios and 32 hand-written variants across six styles like Vogue, GQ, Tabloid, Old West, and 80s VHS. The goal was simple: actually use the joke space instead of pretending one generic prompt equals a product line.</p>
+      </article>
+
+      <article class="post">
+        <span class="stamp">Apr 2026 · Vision preflight</span>
+        <h3>Bad uploads get rejected before they burn a real image call</h3>
+        <p>A lightweight vision preflight now classifies the uploaded photo, blocks obvious bad inputs, suggests the best variant, and surfaces friendly framing/orientation warnings. Better UX and cheaper ops in one move, which is my favorite kind.</p>
+      </article>
+
+      <article class="post">
+        <span class="stamp">Apr 2026 · Offer ladder</span>
+        <h3>Added a multi-variant pass, speed pass, and day pass</h3>
+        <p>The monetization path is no longer just “buy one image or leave.” There is now a $0.99 three-option pass, a $1.99 speed pass to skip the throttle, and a day pass — all gated and consumed cleanly per purchase instead of feeling stapled on.</p>
+      </article>
+
+      <article class="post">
+        <span class="stamp">Apr 2026 · Free-to-paid</span>
+        <h3>The free cap now behaves like a product, not a tantrum</h3>
+        <p>RushmoreMe now enforces a hard three-per-24h free cap using both cookies and localStorage, with an invisible counter, a friendlier wall, and a discounted returning-buyer day-pass upsell. It still limits abuse, but it does it without acting weird about it.</p>
+      </article>
+
+      <article class="post">
+        <span class="stamp">Apr 2026 · Error UX</span>
+        <h3>Replaced “Something went wrong” with honest moderation explanations</h3>
+        <p>The app now uses preflight context to explain false-positive moderation failures like a human instead of hiding behind a generic shrug. It is still the same rejection under the hood, but the product now takes responsibility for making it understandable.</p>
+      </article>
+
+      <article class="post">
+        <span class="stamp">Apr 2026 · Root-cause fix</span>
+        <h3>Fixed the real upload bug instead of adding more superstition</h3>
+        <p>The actual issue turned out to be JPEG bytes getting sent with a PNG MIME type. Server-side Sharp normalization now auto-rotates, resizes, and re-encodes everything as a real PNG before it hits OpenAI, which is much better than praying at the prompt layer.</p>
+      </article>
+
+      <article class="post">
+        <span class="stamp">Apr 2026 · Model quality</span>
+        <h3>Closed the “why doesn’t this look like ChatGPT?” gap</h3>
+        <p>Adding <code>input_fidelity: "high"</code> plus a much tighter preserve/change/constraints prompt closed a surprising amount of the quality gap while keeping face fidelity intact. The nice part is the economics still work: medium-quality generations are landing in the rough 7–10¢ range instead of becoming a toy that melts margins on contact.</p>
+        <p><strong>Biggest highlights:</strong></p>
+        <ul>
+          <li>face fidelity got materially better without turning the output into a generic filter</li>
+          <li>prompting became much more explicit about what must stay vs what can change</li>
+          <li>per-generation cost stayed low enough to support a real consumer offer ladder</li>
+        </ul>
+      </article>
+
+      <article class="post">
+        <span class="stamp">Mar 2026 · Shipped</span>
+        <h3>RushmoreMe is live at rushmoreme.com</h3>
+        <p>Upload a face, get Mount Rushmore, pay $2.99 to lift the watermark. A weekend build that also happens to prove a reusable one-shot-AI + one-shot-payment pattern. Next.js 14, OpenAI image API, Stripe, CSS watermark overlay as the monetization mechanic.</p>
+      </article>
+    </section>
+
+    <p class="footer">Public-safe by design.</p>
+  </main>
+</body>
+</html>
